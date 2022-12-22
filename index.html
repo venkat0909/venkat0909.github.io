@@ -1,11 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
 <head>
-	<title>Venkat Reddy</title>
+	<meta charset="utf-8">
+	<title>Registration Form</title>
+	<style>
+		* {
+			font-weight: 1000;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+		}
+
+		body {
+			background-color: #64b3f4;
+		}
+
+		.header {
+			color: #ffffff;
+			border-bottom: 1px solid #f0f0f0;
+			background: #c2e59c;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #64b3f4, #c2e59c);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			padding: 20px 40px;
+		}
+
+		.header h2 {
+			margin: 0;
+		}
+
+
+		.container {
+			background-color: #fff;
+			border-radius: 20px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			display: block;
+			justify-content: center;
+			width: 500px;
+			max-width: 100%;
+			margin: 3% auto auto auto;
+			padding: 1% 5% 2% 5%;
+			background-color: #c2e59c;
+
+		}
+
+		.form {
+			padding: 30px 40px;
+		}
+
+		input[type=text],
+		input[type=submit],
+		input[type=reset],
+		input[type=email] {
+			border-radius: 20px;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			width: 100%;
+			border: none;
+			background: #f1f1f1;
+		}
+		input[type=submit],input[type=reset]{
+			width: 25%;
+		}
+		#btn{
+			padding-top: 20px;
+			text-align: center;
+			padding-bottom: 0%;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function verify() {
+			var fname = document.getElementById("fname");
+			var gender = document.getElementsByName("gender");
+			var address = document.getElementById("address");
+			var pin = document.getElementById("pin");
+			var lname = document.getElementById("lname");
+			var email = document.getElementById("email");
+			var msg = new Array();
+			var flag = 1;
+			var message = "Following Details are Required\n";
+			var message2 = "Following Details are Required<br>";
+			if (fname.value == "") {
+				msg[0] = "First Name is Required";
+				flag = 0;
+			} else { msg[0] = ""; }
+
+			if (lname.value == "") {
+				msg[1] = "Last Name is required ";
+				flag = 0;
+			} else { msg[1] = ""; }
+
+			if (gender[0].checked == false && gender[1].checked == false) {
+				msg[2] = "Select Gender";
+				flag = 0;
+			} else { msg[2] = ""; }
+
+			if (address.value == "") {
+				msg[3] = "Address is Required";
+				flag = 0;
+			} else { msg[3] = ""; }
+
+			if (pin.value == "") {
+				msg[4] = "Pin code is Required";
+				flag = 0;
+			} else { msg[4] = ""; }
+
+			if (email.value == "") {
+				msg[5] = "Email address is Required";
+				flag = 0;
+			} else { msg[5] = ""; }
+
+
+
+			if (flag == 0) {
+				// Show Error Messages
+				for (var x = 0; x <= 5; x++) {
+					if (msg[x] != "") {
+						message += msg[x] + "\n";
+						message2 += msg[x] + "<br>";
+					}
+				}
+				alert(message);
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+
+	</script>
 </head>
+
 <body>
-<h1>VENKAT REDDY</h1>
-<P> Iam venkat reddy studiying in sbjain. persuing my engineering....</P>
+	<div class="container">
+		<h1>Registration Form</h1>
+		<form method="post" action="" onSubmit="return verify()">
+			<label>First Name: </label>
+			<input type="text" name="fname" id="fname" size="25" placeholder="Enter First Name" />
+			<label for="LastName">Last Name:</label>
+			<input type="text" name="lname" id="lname" size="25" placeholder="Enter Last Name">
+
+			<label for="Gender">Gender:</label>
+			<input type="radio" name="gender" value="Male" /> Male
+			<input type="radio" name="gender" value="Female" /> Female
+			<br><br>
+			<label>Address: </label>
+			<input type="text" name="address" text area="add" id="address" placeholder="Enter Address" />
+			<label>Pin Code: </label>
+			<input type="text" name="pin" id="pin" placeholder="123">
+			<label>Email address: </label>
+			<input type="email" name="email" text area="add" id="email" placeholder="Enter email address" />
+			<input class="form-check-input" type="checkbox" id="gridCheck">
+			<label class="form-check-label" for="gridCheck">
+				Check me out
+			<br>
+			<div id="btn">
+				<input type="submit" value="REGISTER" />
+				<input type="reset" value="CLEAR" />
+			</div>
+		</form>
+		<br>
+		<br>
+	</div>
+	<div>
+		<footer align="center">
+			<h3> &copy;Kartik Mankar | Department of Electronic & Telecommunication Engineering | USN : ME20TET009|
+				S.B.Jain, Nagpur</h3>
+		</footer>
+	</div>
+
 
 </body>
+
 </html>
