@@ -34,14 +34,14 @@
 
 		.container {
 			background-color: #fff;
-			border-radius: 20px;
+			border-radius: 10px;
 			display: block;
 			justify-content: center;
 			width: 500px;
 			max-width: 100%;
 			margin: 3% auto auto auto;
 			padding: 1% 5% 2% 5%;
-			background-color: #111111;
+			background-color: #000000;
 
 		}
 
@@ -76,7 +76,7 @@
 			var fname = document.getElementById("fname");
 			var gender = document.getElementsByName("gender");
 			var address = document.getElementById("address");
-			var pin = document.getElementById("pin");
+			var mo_no = document.getElementById("mo_no");
 			var lname = document.getElementById("lname");
 			var email = document.getElementById("email");
 			var msg = new Array();
@@ -103,8 +103,8 @@
 				flag = 0;
 			} else { msg[3] = ""; }
 
-			if (pin.value == "") {
-				msg[4] = "Pin code is Required";
+			if (mo_no.value == "") {
+				msg[4] = "Mobile Number is Required";
 				flag = 0;
 			} else { msg[4] = ""; }
 
@@ -149,8 +149,8 @@
 			<br><br>
 			<label>Address: </label>
 			<input type="text" name="address" text area="add" id="address" placeholder="Enter Address" />
-			<label>Pin Code: </label>
-			<input type="text" name="pin" id="pin" placeholder="123">
+			<label>Mobile No.: </label>
+			<input type="text" name="mo_no" id="mo_no" placeholder="+91">
 			<label>Email address: </label>
 			<input type="email" name="email" text area="add" id="email" placeholder="Enter email address" />
 			<input class="form-check-input" type="checkbox" id="gridCheck">
